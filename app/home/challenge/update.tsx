@@ -29,7 +29,7 @@ export default function Update() {
     >
       {/* RIGHT IMAGE */}
       <motion.img
-        src="/home/challenge/bg.png"
+        src="/home/challenge/bg.webp"
         alt="Food delivery app challenge"
         initial={{
           opacity: 0,

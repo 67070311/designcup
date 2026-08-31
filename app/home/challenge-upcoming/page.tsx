@@ -198,7 +198,7 @@ export default function ChallengeUpcoming() {
             className="relative h-[390px] w-[250px]"
           >
             <Image
-              src="/home/challenge-upcoming/character.png"
+              src="/home/challenge-upcoming/character.webp"
               alt="Designer ready for next challenge"
               fill
               sizes="250px"

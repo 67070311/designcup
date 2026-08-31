@@ -2,13 +2,13 @@ import Image from "next/image";
 import Link from "next/link";
 
 const images = [
-  "/home/search/poster/1.png",
-  "/home/search/poster/2.png",
-  "/home/search/poster/3.png",
-  "/home/search/poster/4.png",
-  "/home/search/poster/5.png",
-  "/home/search/poster/6.png",
-  "/home/search/poster/7.png",
+  "/home/search/poster/1.webp",
+  "/home/search/poster/2.webp",
+  "/home/search/poster/3.webp",
+  "/home/search/poster/4.webp",
+  "/home/search/poster/5.webp",
+  "/home/search/poster/6.webp",
+  "/home/search/poster/7.webp",
 ];
 
 export default function Poster() {

@@ -2,13 +2,13 @@ import Image from "next/image";
 import Link from "next/link";
 
 const images = [
-  "/home/search/ecommerce/1.png",
-  "/home/search/ecommerce/2.png",
-  "/home/search/ecommerce/3.png",
-  "/home/search/ecommerce/4.png",
-  "/home/search/ecommerce/5.png",
-  "/home/search/ecommerce/6.png",
-  "/home/search/ecommerce/7.png",
+  "/home/search/ecommerce/1.webp",
+  "/home/search/ecommerce/2.webp",
+  "/home/search/ecommerce/3.webp",
+  "/home/search/ecommerce/4.webp",
+  "/home/search/ecommerce/5.webp",
+  "/home/search/ecommerce/6.webp",
+  "/home/search/ecommerce/7.webp",
 ];
 
 export default function Ecommerce() {

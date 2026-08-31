@@ -2,13 +2,13 @@ import Image from "next/image";
 import Link from "next/link";
 
 const images = [
-  "/home/search/landing-page/1.png",
-  "/home/search/landing-page/2.png",
-  "/home/search/landing-page/3.png",
-  "/home/search/landing-page/4.png",
-  "/home/search/landing-page/5.png",
-  "/home/search/landing-page/6.png",
-  "/home/search/landing-page/7.png",
+  "/home/search/landing-page/1.webp",
+  "/home/search/landing-page/2.webp",
+  "/home/search/landing-page/3.webp",
+  "/home/search/landing-page/4.webp",
+  "/home/search/landing-page/5.webp",
+  "/home/search/landing-page/6.webp",
+  "/home/search/landing-page/7.webp",
 ];
 
 export default function LandingPage() {

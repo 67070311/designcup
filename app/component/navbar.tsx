@@ -130,7 +130,7 @@ export default function Navbar() {
           aria-label="DesignCup Home"
         >
           <Image
-            src="/logo/logo.png"
+            src="/logo/logo.webp"
             alt="DesignCup"
             width={130}
             height={130}

@@ -2,13 +2,13 @@ import Image from "next/image";
 import Link from "next/link";
 
 const images = [
-  "/home/search/branding/1.1.png",
-  "/home/search/branding/1.2.png",
-  "/home/search/branding/1.3.png",
-  "/home/search/branding/1.4.png",
-  "/home/search/branding/1.5.png",
-  "/home/search/branding/1.6.png",
-  "/home/search/branding/1.7.png",
+  "/home/search/branding/1.1.webp",
+  "/home/search/branding/1.2.webp",
+  "/home/search/branding/1.3.webp",
+  "/home/search/branding/1.4.webp",
+  "/home/search/branding/1.5.webp",
+  "/home/search/branding/1.6.webp",
+  "/home/search/branding/1.7.webp",
 ];
 
 export default function Branding() {

@@ -15,7 +15,7 @@ export default function Footer() {
               aria-label="DesignCup Home"
             >
               <Image
-                src="/logo/logo.png"
+                src="/logo/logo.webp"
                 alt="DesignCup"
                 width={170}
                 height={80}

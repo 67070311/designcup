@@ -7,7 +7,7 @@ import { ArrowUpRight, CloudUpload } from "lucide-react";
 
 export default function ActiveChallengeHero() {
   return (
-    <section className="w-full bg-white px-[40px] py-[64px]">
+    <section className="w-full bg-white px-[56px] py-[72px]">
       <motion.div
         initial={{
           opacity: 0,
@@ -24,16 +24,16 @@ export default function ActiveChallengeHero() {
         className="
           relative
           mx-auto
-          min-h-[560px]
+          min-h-[500px]
           w-full
-          max-w-[1410px]
+          max-w-[1280px]
           overflow-hidden
-          rounded-[24px]
+          rounded-[22px]
           bg-[#EFFBFF]
         "
       >
-        {/* CONTENT */}
-        <div className="relative z-10 flex min-h-[560px] w-[53%] flex-col justify-center px-[64px] py-[56px]">
+        {/* LEFT CONTENT */}
+        <div className="relative z-10 flex min-h-[500px] w-[53%] flex-col justify-center px-[52px] py-[44px]">
           {/* STATUS */}
           <motion.div
             initial={{
@@ -48,13 +48,13 @@ export default function ActiveChallengeHero() {
               delay: 0.1,
               duration: 0.55,
             }}
-            className="flex items-center gap-[20px]"
+            className="flex items-center gap-[14px]"
           >
-            <div className="flex h-[52px] items-center justify-center rounded-[9px] bg-[#287CFF] px-[22px] text-[16px] font-medium tracking-[0.5px] text-white">
+            <div className="flex h-[44px] items-center justify-center rounded-[8px] bg-[#287CFF] px-[18px] text-[13px] font-medium tracking-[0.4px] text-white">
               SUBMISSION OPEN
             </div>
 
-            <div className="flex h-[52px] items-center justify-center rounded-[9px] border border-[#D5DCE8] bg-white/80 px-[24px] text-[16px] font-medium text-[#111111]">
+            <div className="flex h-[44px] items-center justify-center rounded-[8px] border border-[#D5DCE8] bg-white/80 px-[20px] text-[13px] font-medium text-[#111111]">
               AUG 1 - AUG 14, 2026
             </div>
           </motion.div>
@@ -73,7 +73,7 @@ export default function ActiveChallengeHero() {
               delay: 0.2,
               duration: 0.6,
             }}
-            className="mt-[52px] text-[48px] font-semibold leading-[1.7] tracking-[-1.5px] text-black"
+            className="mt-[38px] text-[40px] font-semibold leading-[1.3] tracking-[-1.2px] text-black"
           >
             Design a Food
             <br />
@@ -94,7 +94,7 @@ export default function ActiveChallengeHero() {
               delay: 0.3,
               duration: 0.6,
             }}
-            className="mt-[20px] max-w-[600px] text-[16px] font-normal leading-[1.7] text-[#565656]"
+            className="mt-[16px] max-w-[520px] text-[14px] font-normal leading-[1.65] text-[#565656]"
           >
             Create a modern food delivery mobile app that helps users discover
             restaurants, browse menus, and place orders quickly with a smooth
@@ -115,37 +115,37 @@ export default function ActiveChallengeHero() {
               delay: 0.4,
               duration: 0.6,
             }}
-            className="mt-[42px] flex items-center gap-[42px]"
+            className="mt-[30px] flex items-center gap-[30px]"
           >
             <Link
               href="/challenge/upload-design"
               className="
                 group
                 flex
-                h-[58px]
-                min-w-[235px]
+                h-[50px]
+                min-w-[205px]
                 items-center
                 justify-center
-                gap-[10px]
+                gap-[9px]
                 rounded-full
                 border-[2px]
                 border-[#287CFF]
                 bg-[#287CFF]
-                px-[24px]
-                text-[16px]
+                px-[20px]
+                text-[14px]
                 font-medium
                 text-white
-                ring-[5px]
+                ring-[4px]
                 ring-[#DDEBFF]
                 transition-all
                 duration-300
                 hover:-translate-y-[2px]
                 hover:bg-[#1769E8]
-                hover:shadow-[0_12px_30px_rgba(40,124,255,0.20)]
+                hover:shadow-[0_10px_26px_rgba(40,124,255,0.18)]
               "
             >
               <CloudUpload
-                size={21}
+                size={19}
                 strokeWidth={2}
                 className="transition-transform duration-300 group-hover:-translate-y-[2px]"
               />
@@ -154,17 +154,58 @@ export default function ActiveChallengeHero() {
 
             <Link
               href="/challenge/active/brief"
-              className="group flex items-center gap-[7px] text-[16px] font-medium text-[#287CFF] underline underline-offset-[5px]"
+              className="group flex items-center gap-[6px] text-[14px] font-medium text-[#287CFF] underline underline-offset-[5px]"
             >
               Read Brief
               <ArrowUpRight
-                size={16}
+                size={15}
                 strokeWidth={1.8}
                 className="transition-transform duration-300 group-hover:translate-x-[2px] group-hover:-translate-y-[2px]"
               />
             </Link>
           </motion.div>
         </div>
+
+        {/* EXTRA DECOR IMAGE */}
+        <motion.div
+          initial={{
+            opacity: 0,
+            scale: 0.8,
+            rotate: -8,
+          }}
+          animate={{
+            opacity: 1,
+            scale: 1,
+            rotate: 0,
+          }}
+          transition={{
+            delay: 0.5,
+            duration: 0.7,
+            ease: [0.16, 1, 0.3, 1],
+          }}
+          className="pointer-events-none absolute left-[48%] top-[108px] z-20"
+        >
+          <motion.div
+            animate={{
+              y: [0, -7, 0],
+              rotate: [0, 3, 0],
+            }}
+            transition={{
+              duration: 4,
+              repeat: Infinity,
+              ease: "easeInOut",
+            }}
+            className="relative h-[72px] w-[72px]"
+          >
+            <Image
+              src="/challenge/Pencil.gif"
+              alt=""
+              fill
+              sizes="72px"
+              className="object-contain"
+            />
+          </motion.div>
+        </motion.div>
 
         {/* RIGHT IMAGE */}
         <motion.div
@@ -181,11 +222,11 @@ export default function ActiveChallengeHero() {
             delay: 0.15,
             ease: [0.16, 1, 0.3, 1],
           }}
-          className="absolute bottom-0 right-0 top-0 w-[51%]"
+          className="absolute bottom-0 right-[20px] top-0 w-[48%]"
         >
           <motion.div
             animate={{
-              y: [0, -7, 0],
+              y: [0, -6, 0],
             }}
             transition={{
               duration: 5,
@@ -195,11 +236,11 @@ export default function ActiveChallengeHero() {
             className="relative h-full w-full"
           >
             <Image
-              src="/challenge/hero.png"
+              src="/challenge/hero.webp"
               alt="Food delivery mobile app challenge"
               fill
               priority
-              sizes="50vw"
+              sizes="46vw"
               className="object-contain object-center"
             />
           </motion.div>

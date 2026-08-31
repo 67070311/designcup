@@ -10,7 +10,7 @@ const categories = [
     title: "Landing Pages",
     description:
       "Design modern, high-converting landing pages for brands, products, and startups",
-    image: "/home/challenge-categories/landing-page.png",
+    image: "/home/challenge-categories/landing-page.webp",
     href: "/explore?category=landing-page",
     label: "Web Design",
   },
@@ -18,7 +18,7 @@ const categories = [
     title: "Mobile Apps",
     description:
       "Create intuitive mobile experiences with beautiful UI and smooth user flows",
-    image: "/home/challenge-categories/mobile-app.png",
+    image: "/home/challenge-categories/mobile-app.webp",
     href: "/explore?category=mobile-app",
     label: "Product Design",
   },
@@ -26,7 +26,7 @@ const categories = [
     title: "E-commerce",
     description:
       "Design online shopping experiences, product pages, and checkout journeys",
-    image: "/home/challenge-categories/e-commerce.png",
+    image: "/home/challenge-categories/e-commerce.webp",
     href: "/explore?category=e-commerce",
     label: "Commerce",
   },
@@ -34,7 +34,7 @@ const categories = [
     title: "Poster",
     description:
       "Create eye-catching posters for events, products, campaigns, and promotions",
-    image: "/home/challenge-categories/poster.png",
+    image: "/home/challenge-categories/poster.webp",
     href: "/explore?category=poster",
     label: "Graphic Design",
   },
@@ -42,7 +42,7 @@ const categories = [
     title: "Branding",
     description:
       "Craft visual identities including logos, colors, typography, and brand systems",
-    image: "/home/challenge-categories/branding.png",
+    image: "/home/challenge-categories/branding.webp",
     href: "/explore?category=branding",
     label: "Brand Identity",
   },

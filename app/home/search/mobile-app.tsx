@@ -2,13 +2,13 @@ import Image from "next/image";
 import Link from "next/link";
 
 const images = [
-  "/home/search/mobile-app/1.png",
-  "/home/search/mobile-app/2.png",
-  "/home/search/mobile-app/3.png",
-  "/home/search/mobile-app/4.png",
-  "/home/search/mobile-app/5.png",
-  "/home/search/mobile-app/6.png",
-  "/home/search/mobile-app/7.png",
+  "/home/search/mobile-app/1.webp",
+  "/home/search/mobile-app/2.webp",
+  "/home/search/mobile-app/3.webp",
+  "/home/search/mobile-app/4.webp",
+  "/home/search/mobile-app/5.webp",
+  "/home/search/mobile-app/6.webp",
+  "/home/search/mobile-app/7.webp",
 ];
 
 export default function MobileApp() {

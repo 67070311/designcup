@@ -182,7 +182,7 @@ export default function Hero() {
         className="absolute bottom-0 left-0 z-[2]"
       >
         <Image
-          src="/home/hero.png"
+          src="/home/hero.webp"
           alt="Designer illustration"
           width={1580}
           height={1527}
