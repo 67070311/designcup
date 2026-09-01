@@ -42,31 +42,20 @@ const menus: Menu[] = [
       },
     ],
   },
-
-  // Explore ไม่มี dropdown แล้ว
   {
     label: "Explore",
     href: "/explore",
   },
-
   {
     label: "Winners",
     items: [
       {
-        label: "Latest Winners",
-        href: "/winners/latest",
-      },
-      {
-        label: "Top 5",
-        href: "/winners/top-5",
-      },
-      {
         label: "Hall of Fame",
-        href: "/winners/hall-of-fame",
+        href: "/winning/hall-of-frame",
       },
       {
         label: "Editor's Picks",
-        href: "/winners/editors-picks",
+        href: "/winning/editor-choice",
       },
     ],
   },
@@ -142,10 +131,6 @@ export default function Navbar() {
               const hasDropdown = !!menu.items;
               const menuActive = isMenuActive(menu);
 
-              /* =====================================================
-                 NORMAL LINK
-              ====================================================== */
-
               if (!hasDropdown && menu.href) {
                 return (
                   <Link
@@ -162,10 +147,6 @@ export default function Navbar() {
                   </Link>
                 );
               }
-
-              /* =====================================================
-                 DROPDOWN MENU
-              ====================================================== */
 
               return (
                 <div
@@ -274,7 +255,7 @@ export default function Navbar() {
 
             {/* LOGIN */}
             <Link
-              href="/login"
+              href="/login-create"
               onClick={() => setOpenMenu(null)}
               className="flex h-[44px] w-[175px] shrink-0 items-center justify-center whitespace-nowrap rounded-[4px] bg-[#287CFF] px-[16px] text-[14px] font-normal text-white transition-colors hover:bg-[#1769E8]"
             >

@@ -186,39 +186,8 @@ export default function Footer() {
             </h3>
 
             <div className="flex flex-col gap-[12px] text-[14px]">
-              <Link
-                href="/explore/landing-page"
-                className={linkClass("/explore/landing-page")}
-              >
-                Landing Page
-              </Link>
-
-              <Link
-                href="/explore/mobile-app"
-                className={linkClass("/explore/mobile-app")}
-              >
-                Mobile App
-              </Link>
-
-              <Link
-                href="/explore/ecommerce"
-                className={linkClass("/explore/ecommerce")}
-              >
-                E-commerce
-              </Link>
-
-              <Link
-                href="/explore/poster"
-                className={linkClass("/explore/poster")}
-              >
-                Poster
-              </Link>
-
-              <Link
-                href="/explore/branding"
-                className={linkClass("/explore/branding")}
-              >
-                Branding
+              <Link href="/explore" className={linkClass("/explore")}>
+                Explore Designs
               </Link>
 
               <Link href="/designers" className={linkClass("/designers")}>
@@ -235,24 +204,17 @@ export default function Footer() {
 
             <div className="flex flex-col gap-[12px] text-[14px]">
               <Link
-                href="/winners/latest"
-                className={linkClass("/winners/latest")}
-              >
-                Latest Winners
-              </Link>
-
-              <Link
-                href="/winners/top-5"
-                className={linkClass("/winners/top-5")}
-              >
-                Top 5
-              </Link>
-
-              <Link
                 href="/winners/hall-of-fame"
                 className={linkClass("/winners/hall-of-fame")}
               >
                 Hall of Fame
+              </Link>
+
+              <Link
+                href="/winners/editors-picks"
+                className={linkClass("/winners/editors-picks")}
+              >
+                Editor&apos;s Picks
               </Link>
             </div>
           </div>

@@ -1,0 +1,1 @@
+import fs from 'node:fs/promises'; import crypto from 'node:crypto'; for (let i=0;i<8;i++){const name=`purple-car.part${String(i).padStart(2,'0')}`; try { const s=(await fs.readFile(name,'utf8')).trim(); console.log(i,s.length,crypto.createHash('sha256').update(s).digest('hex')); } catch(e){ console.log(i,'missing'); } }

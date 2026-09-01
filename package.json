@@ -11,7 +11,19 @@
     "install:voting-images": "node install-voting-images.mjs",
     "search:explore-assets": "node search-explore-assets.mjs",
     "install:explore-images": "node install-explore-images.mjs",
-    "install:explore-extra-images": "node install-explore-extra-images.mjs"
+    "install:explore-extra-images": "node install-explore-extra-images.mjs",
+    "decode-car-rental": "node decode-car-rental.mjs",
+    "check-hall-images": "node check-hall-image-sizes.mjs",
+    "enhance-hall-images": "node enhance-hall-images.mjs",
+    "fix-samokat-quality": "node fix-samokat-quality.mjs",
+    "patch-hall-unoptimized": "node patch-hall-unoptimized.mjs",
+    "install-hall-covers": "node install-hall-covers.mjs",
+    "fix-hall-current-paths": "node fix-hall-current-paths.mjs",
+    "check-hall-covers": "node check-hall-covers.mjs",
+    "optimize-hall-ui": "node optimize-hall-ui.mjs",
+    "install:latest-purple-car": "node install-latest-purple-car.mjs",
+    "hash-purple": "node hash-purple-parts.mjs",
+    "decode:purple-car-final": "node decode-purple-car-final.mjs"
   },
   "dependencies": {
     "@iconify/react": "^6.0.2",
