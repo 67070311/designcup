@@ -1,0 +1,2 @@
+import fs from 'node:fs';
+console.log(fs.existsSync('/mnt/data/AB6AXuCGGIoW_IRfY1sRIARxoT6bvp2IEmlPquMAaYLbhUckQbCwWPXUZSZyjJuZJ7E7yaDJfeL0AXzIqybKQsR9Va78H_OPYbXsHEERUKl50lUXK457qGUMx4d0zpvz4IC7A_JU1umAisPwZeC78uMW5X3v8az7uKZGWx8Bmd9w5YrKhtmu1w88Y-VKgawjLQVw2oU3Q59Ib0TaE0DZMM2BYb_R7grqqKDXObdExI8TnMvWz4a_QA10.png'));

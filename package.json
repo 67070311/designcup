@@ -6,7 +6,12 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "convert:webp": "node convert-webp.mjs",
+    "install:voting-images": "node install-voting-images.mjs",
+    "search:explore-assets": "node search-explore-assets.mjs",
+    "install:explore-images": "node install-explore-images.mjs",
+    "install:explore-extra-images": "node install-explore-extra-images.mjs"
   },
   "dependencies": {
     "@iconify/react": "^6.0.2",

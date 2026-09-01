@@ -3,7 +3,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { FormEvent, useState } from "react";
-import { useRouter } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 
 type MenuItem = {
   label: string;
@@ -37,40 +37,18 @@ const menus: Menu[] = [
         href: "/challenge/voting-design",
       },
       {
-        label: "Upcoming",
-        href: "/challenge/upcoming-design",
-      },
-      {
         label: "Completed",
         href: "/challenge/complete-design",
       },
     ],
   },
+
+  // Explore ไม่มี dropdown แล้ว
   {
     label: "Explore",
-    items: [
-      {
-        label: "Landing Page",
-        href: "/explore/landing-page",
-      },
-      {
-        label: "Mobile App",
-        href: "/explore/mobile-app",
-      },
-      {
-        label: "E-commerce",
-        href: "/explore/ecommerce",
-      },
-      {
-        label: "Poster",
-        href: "/explore/poster",
-      },
-      {
-        label: "Branding",
-        href: "/explore/branding",
-      },
-    ],
+    href: "/explore",
   },
+
   {
     label: "Winners",
     items: [
@@ -100,6 +78,7 @@ const menus: Menu[] = [
 
 export default function Navbar() {
   const router = useRouter();
+  const pathname = usePathname();
 
   const [openMenu, setOpenMenu] = useState<string | null>(null);
   const [search, setSearch] = useState("");
@@ -117,6 +96,22 @@ export default function Navbar() {
 
   const toggleMenu = (menuName: string) => {
     setOpenMenu((current) => (current === menuName ? null : menuName));
+  };
+
+  const isRouteActive = (href: string) => {
+    if (href === "/") {
+      return pathname === "/";
+    }
+
+    return pathname === href || pathname.startsWith(`${href}/`);
+  };
+
+  const isMenuActive = (menu: Menu) => {
+    if (menu.href) {
+      return isRouteActive(menu.href);
+    }
+
+    return menu.items?.some((item) => isRouteActive(item.href)) ?? false;
   };
 
   return (
@@ -145,6 +140,11 @@ export default function Navbar() {
           <div className="flex shrink-0 items-center gap-[48px]">
             {menus.map((menu) => {
               const hasDropdown = !!menu.items;
+              const menuActive = isMenuActive(menu);
+
+              /* =====================================================
+                 NORMAL LINK
+              ====================================================== */
 
               if (!hasDropdown && menu.href) {
                 return (
@@ -152,12 +152,20 @@ export default function Navbar() {
                     key={menu.label}
                     href={menu.href}
                     onClick={() => setOpenMenu(null)}
-                    className="whitespace-nowrap text-[16px] font-normal text-[#171717] transition-colors hover:text-[#287CFF]"
+                    className={`whitespace-nowrap text-[16px] font-normal transition-colors ${
+                      menuActive
+                        ? "text-[#287CFF]"
+                        : "text-[#171717] hover:text-[#287CFF]"
+                    }`}
                   >
                     {menu.label}
                   </Link>
                 );
               }
+
+              /* =====================================================
+                 DROPDOWN MENU
+              ====================================================== */
 
               return (
                 <div
@@ -169,7 +177,11 @@ export default function Navbar() {
                   <button
                     type="button"
                     onClick={() => toggleMenu(menu.label)}
-                    className="flex items-center gap-[7px] whitespace-nowrap text-[16px] font-normal text-[#171717] transition-colors hover:text-[#287CFF]"
+                    className={`flex items-center gap-[7px] whitespace-nowrap text-[16px] font-normal transition-colors ${
+                      menuActive || openMenu === menu.label
+                        ? "text-[#287CFF]"
+                        : "text-[#171717] hover:text-[#287CFF]"
+                    }`}
                   >
                     {menu.label}
 
@@ -192,19 +204,28 @@ export default function Navbar() {
                     </svg>
                   </button>
 
+                  {/* DROPDOWN */}
                   {openMenu === menu.label && (
                     <div className="absolute left-1/2 top-full z-[100] -translate-x-1/2 pt-[18px]">
                       <div className="w-[200px] rounded-[12px] border border-[#ECECEC] bg-white p-[8px] shadow-[0_12px_35px_rgba(0,0,0,0.10)]">
-                        {menu.items?.map((item) => (
-                          <Link
-                            key={item.href}
-                            href={item.href}
-                            onClick={() => setOpenMenu(null)}
-                            className="block rounded-[8px] px-[14px] py-[11px] text-[16px] font-normal text-[#222222] transition-colors hover:bg-[#F5F8FF] hover:text-[#287CFF]"
-                          >
-                            {item.label}
-                          </Link>
-                        ))}
+                        {menu.items?.map((item) => {
+                          const itemActive = isRouteActive(item.href);
+
+                          return (
+                            <Link
+                              key={item.href}
+                              href={item.href}
+                              onClick={() => setOpenMenu(null)}
+                              className={`block rounded-[8px] px-[14px] py-[11px] text-[16px] font-normal transition-colors ${
+                                itemActive
+                                  ? "bg-[#F3F6FF] text-[#287CFF]"
+                                  : "text-[#222222] hover:bg-[#F5F8FF] hover:text-[#287CFF]"
+                              }`}
+                            >
+                              {item.label}
+                            </Link>
+                          );
+                        })}
                       </div>
                     </div>
                   )}
@@ -215,9 +236,10 @@ export default function Navbar() {
 
           {/* RIGHT */}
           <div className="ml-[30px] flex min-w-0 shrink-0 items-center gap-[14px]">
+            {/* SEARCH */}
             <form
               onSubmit={handleSearch}
-              className="flex h-[44px] w-[210px] items-center rounded-[10px] border border-[#DFE4EE] bg-white px-[14px]"
+              className="flex h-[44px] w-[210px] items-center rounded-[10px] border border-[#DFE4EE] bg-white px-[14px] transition-colors focus-within:border-[#287CFF]"
             >
               <svg
                 width="19"
@@ -250,6 +272,7 @@ export default function Navbar() {
               />
             </form>
 
+            {/* LOGIN */}
             <Link
               href="/login"
               onClick={() => setOpenMenu(null)}
@@ -258,6 +281,7 @@ export default function Navbar() {
               Login to your Account
             </Link>
 
+            {/* PROFILE */}
             <Link
               href="/profile"
               onClick={() => setOpenMenu(null)}

@@ -1,7 +1,30 @@
+"use client";
+
 import Link from "next/link";
 import Image from "next/image";
+import { FormEvent } from "react";
+import { usePathname } from "next/navigation";
 
 export default function Footer() {
+  const pathname = usePathname();
+
+  const isActive = (href: string) => {
+    if (href === "/") {
+      return pathname === "/";
+    }
+
+    return pathname === href || pathname.startsWith(`${href}/`);
+  };
+
+  const linkClass = (href: string) =>
+    `transition-colors duration-200 ${
+      isActive(href) ? "text-[#287CFF]" : "text-[#222222] hover:text-[#287CFF]"
+    }`;
+
+  const handleNewsletter = (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+  };
+
   return (
     <footer className="w-full bg-white">
       <div className="mx-auto w-full max-w-[1600px] px-[70px] pb-[50px] pt-[60px]">
@@ -36,7 +59,7 @@ export default function Footer() {
               <Link
                 href="#"
                 aria-label="Instagram"
-                className="flex h-[32px] w-[32px] items-center justify-center rounded-full bg-[#287CFF] text-white transition hover:scale-105"
+                className="flex h-[32px] w-[32px] items-center justify-center rounded-full bg-[#287CFF] text-white transition-all duration-200 hover:-translate-y-[2px] hover:bg-[#1769E8]"
               >
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
                   <rect
@@ -48,6 +71,7 @@ export default function Footer() {
                     stroke="currentColor"
                     strokeWidth="2"
                   />
+
                   <circle
                     cx="12"
                     cy="12"
@@ -55,6 +79,7 @@ export default function Footer() {
                     stroke="currentColor"
                     strokeWidth="2"
                   />
+
                   <circle cx="17.5" cy="6.5" r="1.2" fill="currentColor" />
                 </svg>
               </Link>
@@ -62,7 +87,7 @@ export default function Footer() {
               <Link
                 href="#"
                 aria-label="Facebook"
-                className="flex h-[32px] w-[32px] items-center justify-center rounded-full bg-[#287CFF] text-white transition hover:scale-105"
+                className="flex h-[32px] w-[32px] items-center justify-center rounded-full bg-[#287CFF] text-white transition-all duration-200 hover:-translate-y-[2px] hover:bg-[#1769E8]"
               >
                 <svg
                   width="19"
@@ -77,7 +102,7 @@ export default function Footer() {
               <Link
                 href="#"
                 aria-label="TikTok"
-                className="flex h-[32px] w-[32px] items-center justify-center rounded-full bg-[#287CFF] text-white transition hover:scale-105"
+                className="flex h-[32px] w-[32px] items-center justify-center rounded-full bg-[#287CFF] text-white transition-all duration-200 hover:-translate-y-[2px] hover:bg-[#1769E8]"
               >
                 <svg
                   width="18"
@@ -92,7 +117,7 @@ export default function Footer() {
               <Link
                 href="mailto:hello@designcup.com"
                 aria-label="Email"
-                className="flex h-[32px] w-[32px] items-center justify-center rounded-full bg-[#287CFF] text-white transition hover:scale-105"
+                className="flex h-[32px] w-[32px] items-center justify-center rounded-full bg-[#287CFF] text-white transition-all duration-200 hover:-translate-y-[2px] hover:bg-[#1769E8]"
               >
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
                   <rect
@@ -104,6 +129,7 @@ export default function Footer() {
                     stroke="currentColor"
                     strokeWidth="2"
                   />
+
                   <path
                     d="M4 7L12 13L20 7"
                     stroke="currentColor"
@@ -122,31 +148,31 @@ export default function Footer() {
               Challenges
             </h3>
 
-            <div className="flex flex-col gap-[12px] text-[14px] text-[#222222]">
+            <div className="flex flex-col gap-[12px] text-[14px]">
               <Link
                 href="/challenge/active"
-                className="transition hover:text-[#287CFF]"
+                className={linkClass("/challenge/active")}
               >
                 Active
               </Link>
 
               <Link
+                href="/challenge/upload-design"
+                className={linkClass("/challenge/upload-design")}
+              >
+                Upload Design
+              </Link>
+
+              <Link
                 href="/challenge/voting-design"
-                className="transition hover:text-[#287CFF]"
+                className={linkClass("/challenge/voting-design")}
               >
                 Voting
               </Link>
 
               <Link
-                href="/challenge/upcoming-design"
-                className="transition hover:text-[#287CFF]"
-              >
-                Upcoming
-              </Link>
-
-              <Link
                 href="/challenge/complete-design"
-                className="transition hover:text-[#287CFF]"
+                className={linkClass("/challenge/complete-design")}
               >
                 Completed
               </Link>
@@ -159,46 +185,43 @@ export default function Footer() {
               Explore
             </h3>
 
-            <div className="flex flex-col gap-[12px] text-[14px] text-[#222222]">
+            <div className="flex flex-col gap-[12px] text-[14px]">
               <Link
                 href="/explore/landing-page"
-                className="transition hover:text-[#287CFF]"
+                className={linkClass("/explore/landing-page")}
               >
                 Landing Page
               </Link>
 
               <Link
                 href="/explore/mobile-app"
-                className="transition hover:text-[#287CFF]"
+                className={linkClass("/explore/mobile-app")}
               >
                 Mobile App
               </Link>
 
               <Link
                 href="/explore/ecommerce"
-                className="transition hover:text-[#287CFF]"
+                className={linkClass("/explore/ecommerce")}
               >
                 E-commerce
               </Link>
 
               <Link
                 href="/explore/poster"
-                className="transition hover:text-[#287CFF]"
+                className={linkClass("/explore/poster")}
               >
                 Poster
               </Link>
 
               <Link
                 href="/explore/branding"
-                className="transition hover:text-[#287CFF]"
+                className={linkClass("/explore/branding")}
               >
                 Branding
               </Link>
 
-              <Link
-                href="/designers"
-                className="transition hover:text-[#287CFF]"
-              >
+              <Link href="/designers" className={linkClass("/designers")}>
                 Top Designers
               </Link>
             </div>
@@ -210,24 +233,24 @@ export default function Footer() {
               Winners
             </h3>
 
-            <div className="flex flex-col gap-[12px] text-[14px] text-[#222222]">
+            <div className="flex flex-col gap-[12px] text-[14px]">
               <Link
                 href="/winners/latest"
-                className="transition hover:text-[#287CFF]"
+                className={linkClass("/winners/latest")}
               >
                 Latest Winners
               </Link>
 
               <Link
                 href="/winners/top-5"
-                className="transition hover:text-[#287CFF]"
+                className={linkClass("/winners/top-5")}
               >
                 Top 5
               </Link>
 
               <Link
                 href="/winners/hall-of-fame"
-                className="transition hover:text-[#287CFF]"
+                className={linkClass("/winners/hall-of-fame")}
               >
                 Hall of Fame
               </Link>
@@ -240,31 +263,28 @@ export default function Footer() {
               Community
             </h3>
 
-            <div className="flex flex-col gap-[12px] text-[14px] text-[#222222]">
-              <Link href="/blog" className="transition hover:text-[#287CFF]">
+            <div className="flex flex-col gap-[12px] text-[14px]">
+              <Link href="/blog" className={linkClass("/blog")}>
                 Blog
               </Link>
 
-              <Link
-                href="/help-center"
-                className="transition hover:text-[#287CFF]"
-              >
+              <Link href="/help-center" className={linkClass("/help-center")}>
                 Help Center
               </Link>
 
-              <Link href="/about" className="transition hover:text-[#287CFF]">
+              <Link href="/about" className={linkClass("/about")}>
                 About Us
               </Link>
 
-              <Link href="/terms" className="transition hover:text-[#287CFF]">
+              <Link href="/terms" className={linkClass("/terms")}>
                 Term of Service
               </Link>
 
-              <Link href="/privacy" className="transition hover:text-[#287CFF]">
+              <Link href="/privacy" className={linkClass("/privacy")}>
                 Privacy Policy
               </Link>
 
-              <Link href="/contact" className="transition hover:text-[#287CFF]">
+              <Link href="/contact" className={linkClass("/contact")}>
                 Contact Us
               </Link>
             </div>
@@ -282,16 +302,20 @@ export default function Footer() {
               challenges and winners.
             </p>
 
-            <form className="mt-[24px] flex items-center gap-[16px]">
+            <form
+              onSubmit={handleNewsletter}
+              className="mt-[24px] flex items-center gap-[16px]"
+            >
               <input
                 type="email"
                 placeholder="Enter your email"
-                className="h-[44px] w-[220px] rounded-[8px] border border-[#DFE4EE] bg-white px-[14px] text-[14px] text-[#222222] outline-none transition placeholder:text-[#68718B] focus:border-[#287CFF]"
+                required
+                className="h-[44px] w-[220px] rounded-[8px] border border-[#DFE4EE] bg-white px-[14px] text-[14px] text-[#222222] outline-none transition-colors placeholder:text-[#68718B] focus:border-[#287CFF]"
               />
 
               <button
                 type="submit"
-                className="flex h-[44px] w-[125px] shrink-0 items-center justify-center rounded-[4px] bg-[#287CFF] text-[14px] font-medium text-white transition hover:bg-[#1769E8]"
+                className="flex h-[44px] w-[125px] shrink-0 items-center justify-center rounded-[4px] bg-[#287CFF] text-[14px] font-medium text-white transition-all duration-200 hover:bg-[#1769E8] active:scale-[0.98]"
               >
                 Enter
               </button>
@@ -299,8 +323,10 @@ export default function Footer() {
           </div>
         </div>
 
+        {/* DIVIDER */}
         <div className="mt-[45px] h-px w-full bg-[#E7E7E7]" />
 
+        {/* COPYRIGHT */}
         <div className="pt-[38px] text-center">
           <p className="text-[14px] font-medium text-[#111111]">
             © 2026 DesignCup. All rights reserved.
